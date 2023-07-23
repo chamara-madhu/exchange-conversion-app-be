@@ -1,7 +1,7 @@
 import axios from "axios";
+import { FREE_CURRENCY_API_KEY } from "../config/secretKeys";
 
 const API_BASE_URL = "https://api.freecurrencyapi.com/v1/latest";
-const API_KEY = "fca_live_ZuKTWnmaaE5vitgz5pN9bFFIP15Buu4rEmzXgvIW";
 
 // get exchange amount
 export const getExchangeAmount = async (req, res) => {
@@ -13,7 +13,7 @@ export const getExchangeAmount = async (req, res) => {
     }
 
     const response = await axios.get(
-      `${API_BASE_URL}?apikey=${API_KEY}&currencies=${to}&base_currency=${from}`
+      `${API_BASE_URL}?apikey=${FREE_CURRENCY_API_KEY}&currencies=${to}&base_currency=${from}`
     );
     const exchangeRate = response?.data?.data?.[to];
 
