@@ -30,8 +30,8 @@ export const getExchangeAmount = async (req, res) => {
         exchangedAmount,
       },
       corporateCurrencyRates: {
-        exchangeRate,
-        exchangedAmount,
+        exchangeRate: "-",
+        exchangedAmount: "-",
       },
     });
   } catch (err) {
